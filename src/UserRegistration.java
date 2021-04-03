@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 
 public class UserRegistration {
 
@@ -24,6 +25,17 @@ public class UserRegistration {
 			System.out.println("Valid lastName");
 		}else {
 			System.out.println("InValid lastName - lastNames Has to start with Caps and length shld be greater than 3");
+		}
+		
+		//UC3
+		String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+		Predicate<String> emailValidation = Pattern.compile(regex).asPredicate();
+		System.out.println("Enter Email");
+		String email = stdin.next();
+		if(emailValidation.test(email)) {
+			System.out.println("Valid Email");
+		}else {
+			System.out.println("InValid Email");
 		}
 
 	}
