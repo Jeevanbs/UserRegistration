@@ -77,6 +77,15 @@ public class UserRegistration {
 			System.out.println("InValid Password doesnt contain Numeric");
 		}
 
+		//UC8
+		String splCharRegex = ".*[`~!@#$%^&*()\\-_=+\\\\|\\[{\\]};:'\",<.>/?]{1}.*";
+		Predicate<String> pwdvalidation4 =  Pattern.compile(splCharRegex).asPredicate();
+		if(pwdvalidation4.test(pwd)) {
+			System.out.println("Valid Password contains Special Char");
+		}else {
+			System.out.println("InValid Password doesnt contain Special Char");
+		}
+
 	}
 
 }
