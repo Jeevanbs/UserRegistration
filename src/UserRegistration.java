@@ -26,7 +26,7 @@ public class UserRegistration {
 		}else {
 			System.out.println("InValid lastName - lastNames Has to start with Caps and length shld be greater than 3");
 		}
-		
+
 		//UC3
 		String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
 		Predicate<String> emailValidation = Pattern.compile(regex).asPredicate();
@@ -37,7 +37,7 @@ public class UserRegistration {
 		}else {
 			System.out.println("InValid Email");
 		}
-		
+
 		//UC4
 		String phoneregex = "^\\d{10}$";
 		Predicate<String> phoneNoValidation = Pattern.compile(phoneregex).asPredicate();
@@ -48,8 +48,17 @@ public class UserRegistration {
 		}else {
 			System.out.println("InValid Phone Number");
 		}
-		
-		
+
+		//UC5
+		System.out.println("Enter Password -- For Length Validation");
+		String pwd = stdin.next();
+		Predicate<String> pwdvalidation1 = n -> n.length() >= 8;
+		if(pwdvalidation1.test(pwd)) {
+			System.out.println("Valid Password Length");
+		}else {
+			System.out.println("InValid Password length");
+		}
+
 	}
 
 }
