@@ -37,7 +37,19 @@ public class UserRegistration {
 		}else {
 			System.out.println("InValid Email");
 		}
-
+		
+		//UC4
+		String phoneregex = "^\\d{10}$";
+		Predicate<String> phoneNoValidation = Pattern.compile(phoneregex).asPredicate();
+		System.out.println("Enter Phone Number with 10 digits only");
+		String phoneNo = stdin.next();
+		if(phoneNoValidation.test(phoneNo)) {
+			System.out.println("Valid Phone Number");
+		}else {
+			System.out.println("InValid Phone Number");
+		}
+		
+		
 	}
 
 }
