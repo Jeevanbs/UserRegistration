@@ -59,6 +59,15 @@ public class UserRegistration {
 			System.out.println("InValid Password length");
 		}
 
+		//UC6
+		String upperCaseRegex = ".*[A-Z].*";
+		Predicate<String> pwdvalidation2 =  Pattern.compile(upperCaseRegex).asPredicate();
+		if(pwdvalidation2.test(pwd)) {
+			System.out.println("Valid Password contains UpperCase");
+		}else {
+			System.out.println("InValid Password doesnt contain UpperCase");
+		}
+
 	}
 
 }
