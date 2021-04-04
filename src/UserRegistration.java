@@ -68,6 +68,15 @@ public class UserRegistration {
 			System.out.println("InValid Password doesnt contain UpperCase");
 		}
 
+		//UC7
+		String numericRegex = ".*\\d.*";
+		Predicate<String> pwdvalidation3 =  Pattern.compile(numericRegex).asPredicate();
+		if(pwdvalidation3.test(pwd)) {
+			System.out.println("Valid Password contains Numeric");
+		}else {
+			System.out.println("InValid Password doesnt contain Numeric");
+		}
+
 	}
 
 }
